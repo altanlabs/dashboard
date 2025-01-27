@@ -8,32 +8,22 @@ const apps = [
   {
     name: "AI Image Generator",
     icon: "🎨",
-    gradient: "from-purple-500 to-pink-500"
+    gradient: "from-[#FF3366] to-[#FF6B6B]"
   },
   {
     name: "Health and Fitness",
     icon: "👥",
-    gradient: "from-blue-500 to-blue-600"
+    gradient: "from-[#4A90E2] to-[#357ABD]"
   },
   {
-    name: "Dashboard",
+    name: "Pema 2",
     icon: "📊",
-    gradient: "from-orange-500 to-red-500"
+    gradient: "from-[#FF6B6B] to-[#FF3366]"
   },
   {
-    name: "Startup Dashboard",
-    icon: "📈",
-    gradient: "from-blue-400 to-purple-500"
-  },
-  {
-    name: "Travel Booking",
-    icon: "📍",
-    gradient: "from-indigo-500 to-purple-500"
-  },
-  {
-    name: "Ticket tool",
-    icon: "📊",
-    gradient: "from-blue-400 to-purple-500"
+    name: "PaidAI",
+    icon: "😊",
+    gradient: "from-[#4A90E2] to-[#357ABD]"
   }
 ]
 
@@ -55,10 +45,7 @@ const recentExecutions = [
   { name: "Daily Fact", time: "2 days ago", status: "success", credits: "3.41" },
   { name: "Daily Fact", time: "3 days ago", status: "error", credits: "3.43" },
   { name: "Daily Fact", time: "4 days ago", status: "success", credits: "3.43" },
-  { name: "Daily Fact", time: "5 days ago", status: "success", credits: "3.39" },
-  { name: "Reply to Ig Comments", time: "6 days ago", status: "success", credits: "1.03" },
-  { name: "Reply to Ig Comments", time: "6 days ago", status: "success", credits: "1.08" },
-  { name: "Daily Fact", time: "6 days ago", status: "success", credits: "3.39" }
+  { name: "Daily Fact", time: "5 days ago", status: "success", credits: "3.39" }
 ]
 
 export default function IndexPage() {
@@ -71,7 +58,7 @@ export default function IndexPage() {
           <p className="text-muted-foreground">Let's take a look at your activity</p>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="outline">Invite</Button>
+          <Button variant="outline" className="text-[#4A90E2] border-[#4A90E2]">Invite</Button>
           <div className="flex items-center gap-2">
             <Avatar className="h-8 w-8">
               <img src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -83,25 +70,25 @@ export default function IndexPage() {
 
       {/* Create App Card */}
       <Card className="p-6 bg-card/50">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 max-w-2xl mx-auto">
           <div className="flex-1">
             <Input 
               className="bg-background"
               placeholder="A landing page for my business"
-              prefix={
+              startContent={
                 <Button variant="ghost" className="px-2">
                   <span className="mr-2">App</span>
-                  <span className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
+                  <span className="w-4 h-4 rounded-full bg-gradient-to-r from-[#FF3366] to-[#FF6B6B]" />
                 </Button>
               }
             />
           </div>
-          <Button>Create</Button>
+          <Button className="bg-[#4A90E2] hover:bg-[#357ABD]">Create</Button>
         </div>
       </Card>
 
       {/* Quick Links */}
-      <div className="flex gap-4 text-sm text-muted-foreground">
+      <div className="flex gap-4 text-sm text-muted-foreground overflow-x-auto">
         <span>Personal Finance Dashboard</span>
         <span>Recipe Manager</span>
         <span>Habit Tracker</span>
@@ -111,13 +98,13 @@ export default function IndexPage() {
 
       {/* Tabs */}
       <div className="flex gap-8 border-b">
-        <button className="pb-2 border-b-2 border-primary font-medium">My Apps</button>
+        <button className="pb-2 border-b-2 border-[#4A90E2] font-medium">My Apps</button>
         <button className="pb-2 text-muted-foreground">Community</button>
         <button className="pb-2 text-muted-foreground">Featured</button>
       </div>
 
       {/* Apps Grid */}
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         {apps.map((app, i) => (
           <Card key={i} className="p-4 flex flex-col items-center gap-2 hover:bg-accent/50 cursor-pointer">
             <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${app.gradient} flex items-center justify-center text-xl`}>
